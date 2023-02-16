@@ -50,26 +50,32 @@ while($dados = mysqli_fetch_array($resultado_noticias)):
       <div class="card-body">
         <h5 class="card-title"><?php echo $dados['titulo'];?></h5>
         <span class ="categoria-noticia"><?php echo $dados['categoria']; ?></span>
-        <p class="card-text"><?php echo substr($dados['descricao'], 0, 80) . '...'; ?></p>
-        <a class ="d-block w-100 botao fundo-roxo texto-branco text-center" href ="noticia.php?noticia=<?= $dados['id']?>">Veja mais!</a>
-        <?php
-        if (isset($_SESSION['admin'])):
-        if($_SESSION['admin'] == true): ?>
+        <!-- Aqui estou usando uma span para conter o texto se não as tags vazam e sobrepoem as outras -->
+        <div class="card-text">
+          <div>
+            <?php echo substr(strip_tags($dados['descricao']), 0, 100) . '...'; ?>
 
-        <hr>
+            <a class ="d-block w-100 botao fundo-roxo texto-branco text-center" href ="noticia.php?noticia=<?= $dados['id']?>">Veja mais!</a>
+            <?php
+            if (isset($_SESSION['admin'])):
+            if($_SESSION['admin'] == true): ?>
 
-        <div class ="botoes-noticia">
-          <a class = "texto-roxo" href = "atualizar.php?id=<?php echo $dados['id'];?>"><i class="fa-solid fa-pencil texto-roxo"></i></a>
-          <a class = "texto-roxo" href = "atualizarFoto.php?id=<?php echo $dados['id'];?>"><i class="fa-solid fa-camera-rotate texto-roxo"></i></a>
-          <a class = "texto-roxo" href = "php_action/delete.php?id=<?php echo $dados['id'];?>"><i class="fa-solid fa-trash texto-roxo"></i></a>
+            <hr>
+
+            <div class ="botoes-noticia">
+              <a class = "texto-roxo" href = "atualizar.php?id=<?php echo $dados['id'];?>"><i class="fa-solid fa-pencil texto-roxo"></i></a>
+              <a class = "texto-roxo" href = "atualizarFoto.php?id=<?php echo $dados['id'];?>"><i class="fa-solid fa-camera-rotate texto-roxo"></i></a>
+              <a class = "texto-roxo" href = "php_action/delete.php?id=<?php echo $dados['id'];?>"><i class="fa-solid fa-trash texto-roxo"></i></a>
+            </div>
+
+            <?php  
+            else:
+
+            endif;
+          endif;
+            ?>
+         </div>
         </div>
-
-        <?php  
-        else:
-
-        endif;
-      endif;
-        ?>
       </div>
     </div>
   </div>
@@ -102,7 +108,7 @@ endif;
    
     <?php
     //Apresentar paginação
-    for($i = 1; $i < $num_pagina; $i++){ ?>
+    for($i = 1; $i <= $num_pagina; $i++){ ?>
 
     <li class="page-item"><a class="page-link" href="index.php?pagina=<?= $i ?>"><?php echo $i; ?></a></li>
         

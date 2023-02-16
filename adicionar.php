@@ -18,7 +18,7 @@ if (isset($_SESSION)):
                     <input class = "fundo-roxo-60" type="text" name="categoria" id="categoria" maxlength = "20" placeholder = "  Categoria" required>
                 </div>
                 <div>   
-                    <textarea class = "fundo-roxo-80" name="descricao" id="descricao" cols="94" rows="6" required placeholder = "  Descrição"></textarea>
+                    <textarea class = "fundo-roxo-80" name="descricao" id="descricao" cols="94" rows="6" placeholder = "  Descrição"></textarea>
                 </div>
             </div>
 

@@ -11,10 +11,13 @@ $resultado = mysqli_query($connect, $sql);
 $dados = mysqli_fetch_array($resultado);
 ?>
     <div class = "container text-center my-5">
-        <img class = "w-50"src = "php_action/uploads/<?php echo $dados['imagem']; ?>">
-        <h2 class ="text-danger mt-2"><?= $dados['titulo']?></h2>
+        <img class = "w-50 news-img"src = "php_action/uploads/<?php echo $dados['imagem']; ?>">
+        <h1 class ="text-danger mt-5"><?= $dados['titulo']?></h1>
         <span class ="text-secondary"><?= $dados['categoria']; ?></span>
-        <p><?= $dados['descricao']?></p>
+        <!-- foi colocado uma div porque o que vem do banco já é uma tag p -->
+        <div class ="news-description texto-justificado">
+            <?= $dados['descricao']?>
+        </div>
     </div>
 
 

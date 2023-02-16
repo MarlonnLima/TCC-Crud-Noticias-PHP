@@ -14,7 +14,7 @@ function clear($input){
 
 if (isset($_POST['btn-cadastrar'])):
     $titulo = clear($_POST['titulo']);
-    $descricao = clear($_POST['descricao']);
+    $descricao = mysqli_escape_string($connect, $_POST['descricao']);
     $categoria = clear($_POST['categoria']);
     $imagem = $_FILES['imagem']['name'];
     $extensao = strtolower(pathinfo($imagem, PATHINFO_EXTENSION));

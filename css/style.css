@@ -42,6 +42,10 @@ hr {
     text-align: center;
 }
 
+.texto-justificado{
+    text-align: justify;
+}
+
 .flex {
     display: flex;
     justify-content: center;
@@ -218,6 +222,15 @@ input#busca:focus::placeholder {
 .edit-button, .remove-button, .switch-photo-button {
     width: 30px;
 }
+
+/* NEWS PAGE */
+.news-img{
+    box-shadow: 10px 10px gray;
+}
+
+
+
+
 /* FORMS */ 
 
 .formulario {

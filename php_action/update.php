@@ -18,13 +18,13 @@ if (isset($_POST['btn-atualizar'])):
     $dados = mysqli_fetch_array($resultado);
     $id = clear($_POST['id']); 
     $titulo = clear($_POST['titulo']);
-    $descricao = clear($_POST['descricao']);
+    $descricao = mysqli_escape_string($connect, $_POST['descricao']);
     $categoria = clear($_POST['categoria']);
 
     $sql = "UPDATE noticias SET titulo = '$titulo', descricao = '$descricao', categoria = '$categoria' WHERE id = '$id'";
 
     if(mysqli_query($connect, $sql)):
-    header('Location: ../admin.index.php');
+    header('Location: ../index.php');
     else:
       echo 'erro ao cadastrar';
     endif;  
