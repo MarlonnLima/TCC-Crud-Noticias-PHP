@@ -225,11 +225,8 @@ input#busca:focus::placeholder {
 
 /* NEWS PAGE */
 .news-img{
-    box-shadow: 10px 10px gray;
+    box-shadow: 10px 10px 10px lightblue;
 }
-
-
-
 
 /* FORMS */ 
 

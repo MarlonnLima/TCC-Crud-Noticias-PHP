@@ -1,4 +1,6 @@
 <?php
+//sessão
+session_start();
 //conexão
 require_once 'php_action/db_connect.php';
 //header
@@ -15,7 +17,7 @@ $dados = mysqli_fetch_array($resultado);
         <h1 class ="text-danger mt-5"><?= $dados['titulo']?></h1>
         <span class ="text-secondary"><?= $dados['categoria']; ?></span>
         <!-- foi colocado uma div porque o que vem do banco já é uma tag p -->
-        <div class ="news-description texto-justificado">
+        <div>
             <?= $dados['descricao']?>
         </div>
     </div>
