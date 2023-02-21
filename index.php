@@ -88,9 +88,9 @@ else:
   echo "Ops! parece que ainda não tem nenhuma noticia cadastrada";
 endif;
 ?>
-
-<nav class = "mx-auto" aria-label="...">
-  <ul class="pagination">
+</div>
+<nav class = "container" aria-label="...">
+  <ul class="pagination d-flex justify-content-center">
     <li class="page-item">
       <?php
       //pagina anterior
@@ -117,7 +117,7 @@ endif;
 
     <li class="page-item">
     <?php
-        if($paginalAtual != $num_pagina - 1){ ?>
+        if($paginalAtual != $num_pagina){ ?>
           <a class="page-link" href="index.php?pagina=<?= $paginalAtual + 1?>">Próximo</a>
           <?php
         }
@@ -125,7 +125,6 @@ endif;
     </li>
   </ul>
 </nav>
-</div>
 
 <?php
 include_once 'includes/footer.php'

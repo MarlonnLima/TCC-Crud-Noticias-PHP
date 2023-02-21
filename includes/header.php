@@ -48,3 +48,13 @@ date_default_timezone_set("America/Sao_Paulo");
         </div>
         
     </header>
+
+    <!-- Essa tag script foi inserida aqui para que o usuário visualize diretamente a edição da página 
+    com wyswig sem ter que esperar carregar-->
+    <script src="https://cdn.tiny.cloud/1/clpzqoji9loof80fec6sdfo023w2rphyf4sarpwjsl8km8uq/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+     <script>
+    tinymce.init({
+      selector: 'textarea#descricao',
+      menubar: false,
+    });
+  </script>

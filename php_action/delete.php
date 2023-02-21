@@ -15,7 +15,8 @@ $id = clear($_GET['id']);
 $sql = "DELETE FROM noticias WHERE id = '$id'";
 
 if(mysqli_query($connect, $sql)):
-    header('Location: ../index.php');
+    header('Location: ' . $_SERVER["HTTP_REFERER"] );
+exit; // É sempre uma boa ideia seguir uma header()instrução com um exitou a execução do código continuará pelo restante do script normalmente.
 else:
     echo "erro ao deletar";
 endif;

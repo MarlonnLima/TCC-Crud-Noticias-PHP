@@ -24,7 +24,8 @@ if (isset($_POST['btn-atualizar'])):
     $sql = "UPDATE noticias SET titulo = '$titulo', descricao = '$descricao', categoria = '$categoria' WHERE id = '$id'";
 
     if(mysqli_query($connect, $sql)):
-    header('Location: ../index.php');
+    header('Location: ' . $_SERVER["HTTP_REFERER"] );
+    exit;
     else:
       echo 'erro ao cadastrar';
     endif;  
@@ -44,7 +45,8 @@ if(isset($_POST['btn-atualizar-foto'])):
   move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $novo_nome_imagem);
 
     if(mysqli_query($connect, $sql)):
-    header('Location: ../index.php');
+      header('Location: ' . $_SERVER["HTTP_REFERER"] );
+      exit;
     else:
       echo 'erro ao cadastrar';
     endif;  
