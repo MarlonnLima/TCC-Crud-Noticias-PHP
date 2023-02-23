@@ -8,7 +8,7 @@
 <nav class ="nav-bar fundo-roxo">
 <ul>
     <li class ="flex">
-        <form class = "form-pesquisa gap20" action = "search.php"method = "POST">
+        <form class = "form-pesquisa gap20" action = "search.php"method = "GET">
             <input type="text" class ="texto-branco" name="busca" id="busca" placeholder="  Busque por categoria ou título" required>
             <button type = "submit" class = "btn-pesquisar fundo-roxo texto-branco" name = "buscar-no-banco"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
