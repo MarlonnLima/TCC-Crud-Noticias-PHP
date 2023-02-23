@@ -29,10 +29,9 @@ $sql = "SELECT * FROM noticias";
 $resultado = mysqli_query($connect, $sql);
 //contar o total de noticias
 $total_noticias = mysqli_num_rows($resultado);
-//setar a cantidade de noticias por página
+//setar a quantidade de noticias por página
 $quantidadeItensPorPagina = 6;
-//calcular o número de páginas necessárias para apresentar
-//as noticias
+//calcular o número de páginas necessárias para apresentar as noticias
 $num_pagina = ceil($total_noticias/$quantidadeItensPorPagina);
 //Calcular o inicio da visualização
 $inicio = ($quantidadeItensPorPagina*$pagina) -$quantidadeItensPorPagina;
