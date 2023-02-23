@@ -40,7 +40,7 @@ if (isset($_SESSION)):
     include_once 'includes/footer.php';
 
     else:
-        header("Location: admin.index.php");
+        header("Location: index.php");
     endif; // da session
 endif; // do isset
 ?>
